@@ -33,6 +33,8 @@ var images = {
   }
 };
 
+//fruits
+
 var apple = document.querySelector('.Fruit--apple');
 apple.addEventListener('click', function() {
   console.log('Apple clicked.');
@@ -56,6 +58,8 @@ banana.addEventListener('click', function() {
   fruitHolder.innerHTML = "<img src = '" + images.fruits.banana + "'/>";
   combine("fruit","banana")
 });
+
+//desserts
 
 var icecream = document.querySelector('.Dessert--icecream');
 icecream.addEventListener('click', function() {
@@ -81,9 +85,29 @@ pie.addEventListener('click', function() {
     combine("dessert","pie")
 });
 
+//combination function
+
 function combine(type,item) {
-  console.log(type,item);
+  if (type==='fruit'){
+    var dessertHolder = document.querySelector('.Holder--dessert').innerHTML;
+    if (dessertHolder.includes("img")){
+      var start = dessertHolder.indexOf("/") + 1;
+      var end = dessertHolder.indexOf(".");
+      dessertHolder=dessertHolder.substr(start,end-start).toLowerCase();
+      var srcData = images.mixes[item][dessertHolder];
+        document.querySelector('.Holder--result').innerHTML=('<img src="' + srcData + '"/>');
+    }
+  }
+
+  if (type==='dessert'){
+    var fruitHolder = document.querySelector('.Holder--fruit').innerHTML;
+    if (fruitHolder.includes("img")) {
+      var start = fruitHolder.indexOf("/") + 1;
+      var end = fruitHolder.indexOf(".");
+      fruitHolder = fruitHolder.substr(start,end-start).toLowerCase();
+      var srcData = images.mixes[fruitHolder][item];
+        document.querySelector('.Holder--result').innerHTML=('<img src="' + srcData + '"/>');
+    }
+  }
+
 }
-
-
-//if statement to state whether it comes from left and check right side to do it, if coming from right check the left and do it
