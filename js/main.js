@@ -33,11 +33,10 @@ var images = {
   }
 };
 
-//fruits
+//Fruit variables and images 
 
 var apple = document.querySelector('.Fruit--apple');
 apple.addEventListener('click', function() {
-  console.log('Apple clicked.');
   var fruitHolder = document.querySelector('.Holder--fruit');
   fruitHolder.innerHTML = "<img src = '" + images.fruits.apple + "'/>";
   combine("fruit","apple")
@@ -45,7 +44,6 @@ apple.addEventListener('click', function() {
 
 var orange = document.querySelector('.Fruit--orange');
 orange.addEventListener('click', function() {
-  console.log('Orange clicked.');
   var fruitHolder = document.querySelector('.Holder--fruit');
   fruitHolder.innerHTML = "<img src = '" + images.fruits.orange + "'/>";
   combine("fruit","orange")
@@ -53,17 +51,15 @@ orange.addEventListener('click', function() {
 
 var banana = document.querySelector('.Fruit--banana');
 banana.addEventListener('click', function() {
-  console.log('Banana clicked.');
   var fruitHolder = document.querySelector('.Holder--fruit');
   fruitHolder.innerHTML = "<img src = '" + images.fruits.banana + "'/>";
   combine("fruit","banana")
 });
 
-//desserts
+//Dessert variables and images
 
 var icecream = document.querySelector('.Dessert--icecream');
 icecream.addEventListener('click', function() {
-  console.log('Ice Cream clicked.');
   var dessertHolder = document.querySelector('.Holder--dessert');
   dessertHolder.innerHTML = "<img src = '" + images.desserts.icecream + "'/>";
   combine("dessert","icecream")
@@ -71,7 +67,6 @@ icecream.addEventListener('click', function() {
 
 var cake = document.querySelector('.Dessert--cake');
 cake.addEventListener('click', function() {
-  console.log('Cake clicked.');
   var dessertHolder = document.querySelector('.Holder--dessert');
   dessertHolder.innerHTML = "<img src = '" + images.desserts.cake + "'/>";
     combine("dessert","cake")
@@ -79,13 +74,12 @@ cake.addEventListener('click', function() {
 
 var pie = document.querySelector('.Dessert--pie');
 pie.addEventListener('click', function() {
-  console.log('Pie clicked.');
   var dessertHolder = document.querySelector('.Holder--dessert');
   dessertHolder.innerHTML = "<img src = '" + images.desserts.pie + "'/>";
     combine("dessert","pie")
 });
 
-//combination function
+//Combination function
 
 function combine(type,item) {
   if (type==='fruit'){
@@ -111,3 +105,12 @@ function combine(type,item) {
   }
 
 }
+
+//Reset function
+
+var reset = document.querySelector('.Reset');
+reset.addEventListener('click', function() {
+  document.querySelector('.Holder--fruit').innerHTML="";
+  document.querySelector('.Holder--dessert').innerHTML="";
+  document.querySelector('.Holder--result').innerHTML="";
+});
