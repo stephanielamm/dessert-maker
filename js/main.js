@@ -37,40 +37,53 @@ var apple = document.querySelector('.Fruit--apple');
 apple.addEventListener('click', function() {
   console.log('Apple clicked.');
   var fruitHolder = document.querySelector('.Holder--fruit');
-  fruitHolder.innerHTML = "<img src = '" + images.fruits.apple + "'/>"
+  fruitHolder.innerHTML = "<img src = '" + images.fruits.apple + "'/>";
+  combine("fruit","apple")
 });
 
 var orange = document.querySelector('.Fruit--orange');
 orange.addEventListener('click', function() {
   console.log('Orange clicked.');
   var fruitHolder = document.querySelector('.Holder--fruit');
-  fruitHolder.innerHTML = "<img src = '" + images.fruits.orange + "'/>"
+  fruitHolder.innerHTML = "<img src = '" + images.fruits.orange + "'/>";
+  combine("fruit","orange")
 });
 
 var banana = document.querySelector('.Fruit--banana');
 banana.addEventListener('click', function() {
   console.log('Banana clicked.');
   var fruitHolder = document.querySelector('.Holder--fruit');
-  fruitHolder.innerHTML = "<img src = '" + images.fruits.banana + "'/>"
+  fruitHolder.innerHTML = "<img src = '" + images.fruits.banana + "'/>";
+  combine("fruit","banana")
 });
 
 var icecream = document.querySelector('.Dessert--icecream');
 icecream.addEventListener('click', function() {
   console.log('Ice Cream clicked.');
   var dessertHolder = document.querySelector('.Holder--dessert');
-  dessertHolder.innerHTML = "<img src = '" + images.desserts.icecream + "'/>"
+  dessertHolder.innerHTML = "<img src = '" + images.desserts.icecream + "'/>";
+  combine("dessert","icecream")
 });
 
 var cake = document.querySelector('.Dessert--cake');
 cake.addEventListener('click', function() {
   console.log('Cake clicked.');
   var dessertHolder = document.querySelector('.Holder--dessert');
-  dessertHolder.innerHTML = "<img src = '" + images.desserts.cake + "'/>"
+  dessertHolder.innerHTML = "<img src = '" + images.desserts.cake + "'/>";
+    combine("dessert","cake")
 });
 
 var pie = document.querySelector('.Dessert--pie');
 pie.addEventListener('click', function() {
   console.log('Pie clicked.');
   var dessertHolder = document.querySelector('.Holder--dessert');
-  dessertHolder.innerHTML = "<img src = '" + images.desserts.pie + "'/>"
+  dessertHolder.innerHTML = "<img src = '" + images.desserts.pie + "'/>";
+    combine("dessert","pie")
 });
+
+function combine(type,item) {
+  console.log(type,item);
+}
+
+
+//if statement to state whether it comes from left and check right side to do it, if coming from right check the left and do it
